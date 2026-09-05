@@ -1,15 +1,15 @@
-from abc import ABC, abstractmethod  # Importamos herramientas para clases abstractas
+from abc import ABC, abstractmethod  
 
-class Character(ABC):  # Clase base abstracta (NO se puede instanciar directamente)
+class Character(ABC):  
     def __init__(self, name, hp, attack, mp):
-        self._name = name      # Nombre del personaje (encapsulado)
+        self._name = name      # Nombre del personaje
         self._hp = hp          # Vida actual
         self._attack = attack  # Ataque base
-        self._mp = mp          # Mana (para magia)
+        self._mp = mp          # Mana 
 
     @abstractmethod
     def perform_action(self, target):
-        pass  # Método obligatorio que las clases hijas deben implementar
+        pass  
 
     def take_damage(self, amount):
         self._hp -= amount  # Reduce la vida
@@ -26,11 +26,11 @@ class Character(ABC):  # Clase base abstracta (NO se puede instanciar directamen
         return False            # No había suficiente MP
 
     def is_alive(self):
-        return self._hp > 0  # Retorna True si sigue vivo
+        return self._hp > 0  
 
     @property
     def name(self):
-        return self._name  # Getter (encapsulamiento)
+        return self._name  
 
     @property
     def hp(self):
